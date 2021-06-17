@@ -1,0 +1,9 @@
+$border-color: grey;
+
+.vehicle-table{
+  border-collapse: collapse;
+}
+.vehicle-table tr, td{
+  border: 1px solid $border-color;
+  padding: 10px;
+}

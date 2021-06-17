@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Category renders correctly 1`] = `
+Array [
+  <p>
+    
+  </p>,
+  <pre>
+    <lable>
+      Enter Category name:
+    </lable>
+    <input
+      type="text"
+    />
+     
+    <button
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </pre>,
+]
+`;
+
+exports[`Add Vehicle renders correctly 1`] = `
+Array [
+  <p>
+    
+  </p>,
+  <table
+    className="vehicle-form"
+  >
+    <thead>
+      <tr>
+        <th />
+        <th />
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Enter Code
+        </td>
+        <td>
+          <input
+            placeholder="Enter registration code"
+            type="text"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Enter Model
+        </td>
+        <td>
+          <input
+            placeholder="Enter vehicle model"
+            type="text"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Enter Type
+        </td>
+        <td>
+          <input
+            placeholder="Enter vehicle type"
+            type="text"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Enter Name
+        </td>
+        <td>
+          <input
+            placeholder="Enter vehicle name"
+            type="text"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Vehicle Categories:
+        </td>
+        <td />
+      </tr>
+    </tbody>
+  </table>,
+  <p />,
+  <button
+    onClick={[Function]}
+  >
+    Save
+  </button>,
+]
+`;

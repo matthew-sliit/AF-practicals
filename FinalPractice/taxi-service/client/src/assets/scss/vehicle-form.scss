@@ -1,0 +1,10 @@
+.vehicle-form{
+  border-collapse: collapse;
+}
+.vehicle-form tr, td{
+  border: 1px solid white;
+  padding: 5px;
+}
+.vehicle-form [input=text]{
+  width:170px;
+}
