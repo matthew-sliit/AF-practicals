@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Lab5</title></head>
+    <body>
+        <form method="GET" action="http://localhost:3000/">
+            <input type="submit" value="GET:localhost:3000/">
+        </form>
+        <br>
+        <form method="GET" action="http://localhost:3000/home">
+            <input type="submit" value="GET:localhost:3000/home">
+        </form>
+        <br>
+        <form method="POST" action="http://localhost:3000/home">
+            <input type="submit" value="POST:localhost:3000/home">
+        </form>
+        <h3>POST:localhost:3000/posts</h3>
+        <form method="POST" action="http://localhost:3000/posts">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter name">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" placeholder="Enter Description">
+            <input type="submit" value="Submit">
+        </form>
+        <h3>GET:localhost:3000/posts</h3>
+        <form method="GET" action="http://localhost:3000/posts">
+            <input type="submit" value="Submit">
+        </form>
+        <h3>GET:localhost:3000/posts/{id}</h3>
+        <form method="GET" id="form1" action="http://localhost:3000/posts/337d8e0a-c339-4218-86dc-e1e2504513d8">
+            <label>ID</label>
+            <input type="text" id="id" name="id" placeholder="Enter ID">
+            <input type="button" value="Submit" onclick="submitform()">
+        </form>
+        <script>
+            function submitform(){
+                document.getElementById('form1').action = "http://localhost:3000/posts/"+document.getElementById("id").value;
+                document.getElementById('form1').submit();
+            }
+        </script>
+    </body>
+</html>

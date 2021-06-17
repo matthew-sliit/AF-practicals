@@ -1,0 +1,10 @@
+mvnw spring-boot:run
+mvnw spring-boot:stop
+
+usage example:
+curl -v localhost:8080/posts
+curl localhost:8080/posts
+curl -X POST localhost:8080/posts -H "Content-type:application/json" --data "{\"name\": \"Thomas Grey\", \"description\": \"Casted in Inception\"}"
+curl -X PUT localhost:8080/posts/813da7be-2514-4454-82b0-27a14c09175e -H "Content-type:application/json" --data "{\"name\": \"John Vinewood\", \"description\": \"Man from vineWood\"}"
+curl -X DELETE localhost:8080/posts/51430e25-56ce-459a-b8c0-0a09eafee487
+curl http://localhost:8080/actuator/health/

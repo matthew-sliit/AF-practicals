@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Lab 02</title></head>
+    <body>
+        Labsheet 02 Answers
+        <script>
+            //Q1
+            /*
+            function execFuncAfter1s(value,func){
+                setTimeout(function(){
+                    func();
+                },value);//1000ms = 1s
+            }
+            var delay = function(){console.log("DELAYED 1s")}
+            execFuncAfter1s(1000,delay);
+            */
+            function execFuncAfter1s(value){
+                let promise = new Promise(function(resolve,reject){
+                   window.setTimeout(function(){
+                        reject();
+                   },value);//1000ms = 1s
+                });
+                return promise;
+            }
+            var success = "Promise Success"; var reject = "Promise Reject";
+            execFuncAfter1s(2000).then(
+                function(success){
+                    console.log("Success 1");
+                },
+                function(reject){
+                    console.log("Reject 1");
+                }
+            ).then(
+                function(success){
+                    console.log("Success 2");
+                },
+                function(reject){
+                    console.log("Reject 2");
+                }
+            )
+            //Q2
+            
+            function out(data){
+                var a = data;
+                console.log(a);   
+            }
+            //class Vehicle
+            class Vehicle{
+                type;
+                static VehicleCount = 0;
+                constructor(){
+                    Vehicle.VehicleCount=Vehicle.VehicleCount+1;  
+                    this.type = "Vehicle";
+                }
+            }
+            Vehicle.prototype.drive = function(){
+                return "Vehicle is driving";
+            }
+            Vehicle.__proto__.setDrive = "Driving";
+            
+            var vehicle = new Vehicle();
+            out("Vehicle count:"+Vehicle.VehicleCount+" |type:"+vehicle.type+" |drive status:"+vehicle.drive());
+            //class Car
+            class Car extends Vehicle{
+                constructor(){
+                    super();//parent constructor
+                    this.type="Car";
+                }
+            }
+            //Car.prototype = Object.create(Vehicle.prototype);// re-define child prototype to Parent prototype
+            //Car.prototype.constructor = Car;// return original constructor to Child
+            Car.prototype.balanceWheel = function(){
+                return "Wheels are balanced";
+            }
+            var car = new Car();
+            out(car.balanceWheel() +" & "+car.drive());
+            out("Vehicle count:"+Vehicle.VehicleCount+" &type is "+car.type);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 01</title>
+    </head>
+    <body>
+        Labsheet 01 Answer
+        <p>Check console</p>
+        <div id="show-console"></div>
+        <script>
+            //Q1
+            var s = function(){
+                console.log("Hello World!");
+            }
+            function loadfunction(func){
+                func();
+            }
+            loadfunction(s);
+            //Q2
+            var jsobj = {
+                name : "Peter", id : "1029XPOS2", age : 20,
+                Credentials: function(){return "id:"+this.id+" name:"+this.name+" age:"+this.age}
+            }
+            console.log(jsobj.Credentials());
+            //Q3
+            var vehicleName = "Assorta Corsa";
+            function printVehicleName(){
+                console.log(this.vehicleName);
+            }
+            var Vehicle={
+                vehicleName : "Benz",
+                //getVehicleName : function(){return printVehicleName();}
+                getVehicleName : function(){console.log(this.vehicleName)}
+            }
+            printVehicleName();
+            Vehicle.getVehicleName();
+            //Q4
+            function getTotalAmount(tax){
+                return function(amount){
+                    return (amount + (amount*tax)/100);
+                };
+            }
+            console.log(getTotalAmount(5)(1000));
+            //Q5
+            function callJsonPlaceholder(link){
+                return fetch(link).then(Response => Response.json()).then(json=>console.log(json));
+            }
+            callJsonPlaceholder('https://jsonplaceholder.typicode.com/posts');
+        </script>
+    </body>
+</html>
